@@ -1,6 +1,3 @@
-title: TP eServices
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-path: path/to/file
 
 # Welcome to MkDocs
 
