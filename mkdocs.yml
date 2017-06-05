@@ -45,8 +45,7 @@ extra:
   feature:
     tabs: false
   palette:
-    primary: Light Blue
-    accent: Orange
+    accent: Amber
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
   logo: 'img/logo.png'
@@ -86,7 +85,11 @@ markdown_extensions:
 # Page tree
 pages:
    - 'index.md'
-   - 'about.md'
+   - TP1: 'tp1.md'
+   - TP2: 'tp2.md'
+   - TP3: 'tp3.md'
+   - TP4: 'tp4.md'
+   - TP5: 'tp5.md'
 
 # Google Analytics
 google_analytics:

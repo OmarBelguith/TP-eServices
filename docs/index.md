@@ -1,64 +1,29 @@
 
-# Welcome to MkDocs
+# Travaux Pratiques eServices
+## GL5 - INSAT
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-Cupcake indexer is a snazzy new project for indexing small cakes.
-
-![Screenshot](img/logo.png)
-
-*Above: Cupcakeeeee indexer in progress*
-
-http://liliasfaxi.wix.com
-
-First Header | Second Header | Third Header
-:----------- |:-------------:| -----------:
-Left         | Center        | Right
-Left         | Center        | Right
+![Logo INSAT](img/insat.jpg)
 
 
-Hi
+* Cours Disponible ici: http://liliasfaxi.wix.com/liliasfaxi/eservices
+* Piazza : https://piazza.com/class/j3k0yr6cyex4n8
+* Repo Github :  https://github.com/INSATunisia
 
-``` python
-def fn():
-    pass
-```
+## Overview
 
-!!! note "Phasellus posuere in sem ut cursus"
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+L'objectif de ce cours est d'initier les étudiants aux architectures à base de services en général. Le cours va concerner principalement les points suivants:
 
-!!! warning
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-hello
+* L'architecture orientée services (SOA: Service-Oriented Architecture)
+* La composition de services: orchestration et chorégraphie
+* Les bus de services (ESB: Enterprise Service Bus)
+* Les Microservices
+* Le API Management
+* L'architecture orientée web (WOA: Web-Oriented Architecture)
 
-!!! danger
-    mytext
+Ce cours comporte cinq séances de travaux pratiques:
 
-### Footnotes
-Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
-
-[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-[^2]:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* TP1: Manipulation des services SOAP et REST avec Talend
+* TP2: Orchestration des services avec BPEL
+* TP3: Mise en place d'un ESB avec Talend ESB
+* TP4: Microservices
+* TP5: API Management avec Anypoint
