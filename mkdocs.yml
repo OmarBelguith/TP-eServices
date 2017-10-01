@@ -25,14 +25,14 @@
 site_name: TP eServices
 site_description: Les Travaux Pratiques du cours eServices
 site_author: Lilia Sfaxi
-site_url: http://liliasfaxi.github.io/tp-eServices/
+site_url: http://liliasfaxi.github.io/TP-eServices/
 
 # Repository
-repo_name: liliasfaxi/tp-eServices
-repo_url: https://github.com/liliasfaxi/tp-eServices
+repo_name: liliasfaxi/TP-eServices
+repo_url: https://github.com/liliasfaxi/TP-eServices
 
 # Copyright
-copyright: 'Copyright &copy; 2016 - 2017 Lilia Sfaxi'
+copyright: 'Copyright &copy; 2017 - 2018 Lilia Sfaxi'
 
 # Theme directory
 theme_dir: material

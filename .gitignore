@@ -38,3 +38,7 @@
 # Distribution files
 /dist
 /mkdocs_material.egg-info
+
+# Files added by me
+/docs/tp2-activiti.md
+/docs/create-pdf.sh

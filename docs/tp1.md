@@ -2,12 +2,15 @@
 
 ![Web Services](img/ws.png)
 
+## Télécharger PDF
+[![Download TP1](img/pdf.png)](tp1.pdf)
+
 ## Objectifs du TP
 Création et consommation de web services SOAP et REST en utilisant l'outil Talend.
 
 ## Outils et Versions
 * [Talend Open Studio for ESB](https://www.talend.com/download_page_type/talend-open-studio/) Version: 6.3.0
-* [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) Version "1.8.0_121"
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) Version 1.8.0_121
 * [MySQL](https://dev.mysql.com/downloads/) Version 14.14 Distrib 5.6.34
 * [SOAPUI](https://www.soapui.org/downloads/soapui.html) Version 5.3.0
 
@@ -56,13 +59,15 @@ L’interface utilisateur de TOS-ESB se présente comme suit:
 
 ![TOS](img/tp1/tos.png)
 
+
 |Composant|Fonctionnalité|
-|---|---|
+|---------|-------------------------------------------------------------|
 | ![1](img/tp1/1.png) | Le traditionnel *Repository* contenant vos Jobs, services, fichiers, routes…   |
 | ![2](img/tp1/2.png) | La fenêtre principale, représentant graphiquement la composition de vos jobs et routes  |
 | ![3](img/tp1/3.png) | La fenêtre contenant les propriétés, la console d’exécution…  |
 | ![4](img/tp1/4.png) | La palette des composants à utiliser  |
 | ![5](img/tp1/5.png) | Les onglets pour le choix de la perspective à utiliser |
+
 
 
 ## Service Web SOAP : Helloworld
@@ -107,7 +112,9 @@ réponse, en lui concaténant le célèbre "Hello". Pour cela:
     * Relier le *in* de la requête avec le *out* de la réponse (créer l’entrée comme sous-élément de la réponse)
     * Modifier l’expression du *out* en ajoutant la chaîne **“Hello “** avant la valeur *in* de l’entrée.
     * Le résultat de la XMLMap devrait ressembler à ce qui suit:
+
     ![XML Map](img/tp1/hw-xml-map.png)
+
     * Sauvegarder et quitter.
 
 
@@ -134,6 +141,7 @@ Nous allons maintenant créer un consommateur pour notre service avec talend ope
 
 * Créer un nouveau Job, que vous appellerez *HelloWorldServiceConsumer*.
 * Concevez votre job de manière à ce qu’il ait l’allure suivante:
+
 ![Soap Consommateur Job](img/tp1/hw-conso.png)
 
   Voici les rôles des éléments que vous avez ajouté:
@@ -154,6 +162,7 @@ vous avez créé. Vérifiez bien que le Endpoint soit sur le port 8090.
 * Configurer votre *tXMLMap* pour que la variable *Nom* soit associée au *in* de votre
 service.
 * Exécuter le Job, et observez le résultat. Votre console devrait afficher le résultat suivant:
+
 ![Helloworld Résultat](img/tp1/hw-result.png)
 
 ## Service Web REST : Interrogation d'une base de données
@@ -165,6 +174,7 @@ Nous allons maintenant montrer comment exposer un service REST pour interroger u
 Nous allons commencer par créer une base de données (MySQL dans mon cas), appelée *eservices-tp1* avec une table, que nous appellerons *user*. Cette table contient les champs *id*, *firstname* et *lastname*. Remplir ensuite la base à votre guise, de manière à avoir au moins 4 entrées.
 
 Elle devra ressembler à ce qui suit:
+
 ![Base de données](img/tp1/rest-db.png)
 
 ### Ajout de la connexion à la base avec Talend
@@ -184,7 +194,7 @@ Nous allons maintenant créer le service REST. Pour cela, créer un nouveau job,
 * **tRestRequest** : Pour définir la requête REST que le client doit appeler
 * **user** : Table de la base de données. Dans la nouvelle connexion à la base de données que vous avez créé, sous *Schémas des tables*, glisser la table *user* vers le Job, puis choisir tMySQLInput dans la fenêtre de choix qui apparaît.
 
-!!! note "Remarque"
+!!! tip "Remarque"
 
     Je choisis *tMySQLInput* car, dans mon cas, c'est une base de données MySQL, et je veux juste lire son contenu, je vais donc y accéder en entrée (d'où le *Input*).
 
@@ -194,6 +204,7 @@ Nous allons maintenant créer le service REST. Pour cela, créer un nouveau job,
 * **tLogRow** : Pour le log, bien sûr.
 
 Le job aura l'allure suivante:
+
 ![Service REST](img/tp1/rest-service.png)
 
 ### Configuration du service REST
@@ -213,12 +224,13 @@ tRestRequest devra être configuré comme suit:
     * Leurs valeurs par défaut soient respectivement 1 et 3.
 
 
-    !!! Remarque
+    !!! tip "Remarque"
         Ces valeurs seront utilisées dans le cas où le consommateur n'introduit pas de paramètres.
 
     * Leur commentaire ait la valeur: *query*
 
-    !!! Remarque
+
+    !!! tip "Remarque"
         Cela indique que ces champs sont des paramètres de requête, pas définies dans le Path.
 
 #### Configuration de user
@@ -229,10 +241,12 @@ Il suffira dans notre cas de:
 * Cliquer sur *Guess Schema*  pour charger le schéma de la base.
 * Changer la requête pour qu'elle soit comme suit:
 
+```sql
+"SELECT * FROM `user` where id>="+globalMap.get("getUsers.from")+
+                      " and id<="+globalMap.get("getUsers.to")
 ```
-"SELECT * FROM `user` where id>="+globalMap.get("getUsers.from")+" and id<="+globalMap.get("getUsers.to")
-```
-!!! Remarque
+
+!!! tip "Remarque"
     globalMap est une variable globale permettant de stocker les informations de la requête, comme par exemple ses paramètres.
 
 #### Configuration de tXMLMap

@@ -36,6 +36,9 @@
     {% set toc_ = (toc_ | first).children %}
   {% endif %}
 
+
+
+
   <!-- Render item list -->
   {% if toc_ | first is defined %}
     <label class="md-nav__title" for="toc">{{ lang.t("toc.title") }}</label>
