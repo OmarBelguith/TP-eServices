@@ -22,7 +22,7 @@ L'objectif de ce cours est d'initier les étudiants aux architectures à base de
 Ce cours comporte cinq séances de travaux pratiques:
 
 * TP1: Manipulation des services SOAP et REST avec Talend
-* TP2: Orchestration des services avec Activiti
+* TP2: Orchestration des services avec Camunda
 * TP3: Mise en place d'un ESB avec Talend ESB
 * TP4: Microservices
 * TP5: API Management avec Anypoint

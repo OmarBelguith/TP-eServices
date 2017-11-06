@@ -144,12 +144,12 @@ Nous allons maintenant créer un consommateur pour notre service avec talend ope
 
 ![Soap Consommateur Job](img/tp1/hw-conso.png)
 
-  Voici les rôles des éléments que vous avez ajouté:
+* Voici les rôles des éléments que vous avez ajouté :
 
-    * tFixedFlowInput : définir les entrées à envoyer à votre service
-    * tXMLMap : associer les entrées définies aux entrées du service
-    * tESBConsumer : consommateur du service
-    * tLogRow: afficher les réponses et/ou les fautes (s’il y’en a)
+    - **tFixedFlowInput** : définir les entrées à envoyer à votre service
+    - **tXMLMap** : associer les entrées définies aux entrées du service
+    - **tESBConsumer** : consommateur du service
+    - **tLogRow**: afficher les réponses et/ou les fautes (s’il y’en a)
 
 * Configurer votre composant *tFixedFlowInput*. Pour cela:
 
