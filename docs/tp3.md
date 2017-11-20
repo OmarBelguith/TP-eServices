@@ -33,7 +33,7 @@ Nous allons maintenant configurer la deuxième instance de l’ESB (dans *altern
 
   * **Configurer l'ESB** : dans l’invite de commande affichée, taper:
 
-```bash
+``` bash
   source scripts/configureC1.sh
 ```
 
@@ -81,14 +81,14 @@ Les routes permettent de définir le comportement que doit prendre le message se
 
   * Configurer la condition *when*, en précisant que c’est une condition de type simple, dont le texte est :
 
-```
+```bash
     "${bodyAs(String)} contains 'Alice'"
 ```
   Cela veut dire que, si le corps du message contient *Alice*, la requête sera routée vers le composant *cCXF_2*.
 
   * Configurer le composant cCXF_1:
 
-    * Adresse: http://localhost:8042/services/HelloWorldService  
+    * Adresse: http://localhost:8042/services/HelloWorldService
     * WSDL: http://localhost:8040/services/HelloWorldService?WSDL.
 
 !!! tip "Remarque"
@@ -165,7 +165,7 @@ Pour activer le service locator (SL), il faut:
 
 Pour tester sa capacité à gérer le failover et la répartition des charges, le SL doit être déployé dans les différents conteneurs de services où sera déployé votre service. Pour cela, taper dans l’invite de commande de chaque conteneur ESB:
 
-```
+```properties
   tesb:start-locator
 ```
 
@@ -199,7 +199,7 @@ Le composant SAM permet le logging et la surveillance des appels de service, ré
 Pour configurer le Service Activity Monitoring:
 
 1.	Déployer SAM au niveau du conteneur d’exécution Talend. Pour cela, taper :
-```
+```properties
 tesb:start-sam
 ```
   Vous remarquerez qu’une base de données Derby sera également déployée sur le conteneur: elle permet de stocker les informations sur l’activité des services.
@@ -248,7 +248,7 @@ Pour associer des paramètres de confidentialité à un service, il faut suivre 
 
 #####1. Déployer STS dans le conteneur d’exécution
 Pour installer le service STS dans votre conteneur, démarrer ce dernier, et taper l’instruction suivante dans le terminal:
-```
+```properties
     feature:install tesb-sts
 ```
 

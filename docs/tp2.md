@@ -107,7 +107,7 @@ Vous allez maintenant créer un nouveau projet Java pour définir le comportemen
 ### Création de la classe principale pour le processus
 La prochaine étape permet de construire une classe pour le processus. Cette classe représente l'interface entre votre application et le moteur de processus Camunda.
 
-```Java
+``` java
 package tn.insat.eservices.tp2.helloworld;
 
 import org.camunda.bpm.application.ProcessApplication;
@@ -122,9 +122,8 @@ public class HelloworldApplication extends ServletProcessApplication {
 Ajouter ensuite le fichier *processes.xml* sous le répertoire *src/main/resources/META-INF*. Ce fichier nous permet de fournir une configuration pour le déploiement de ce processus dans le moteur de processus.
 
 
-```xml
+``` xml
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <process-application
         xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -335,8 +334,8 @@ Grâce aux connecteurs, Camunda peut intégrer des services web REST ou SOAP. Po
     |Nom|Type|Valeur|
     |-------|--------|-----------------------------------------------------|
     | url | Script / JavaScript / Inline Script |  ``` var ville=execution.getVariable("ville"); 'http://api.openweathermap.org/data/2.5/weather?APPID=17db59488cadcad345211c36304a9266&q='+ville; ```|
-    | method  | Text  | GET  |   
-    |  headers | Map  | `key: accept, value:application/json -       key:content-type, value:application/json`  |   
+    | method  | Text  | GET  |
+    |  headers | Map  | `key: accept, value:application/json -       key:content-type, value:application/json`  |
 
     - **Output**: Le service utilisé renvoie un document json qui ressemble à ce qui suit:
 
